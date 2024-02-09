@@ -1,6 +1,6 @@
 const MENU = [
   {
-    title: "Lanche do dia",
+    category: "Lanche do dia",
     data: [
       {
         id: "1",
@@ -24,7 +24,7 @@ const MENU = [
     ],
   },
   {
-    title: "Promoções",
+    category: "Promoções",
     data: [
       {
         id: "2",
@@ -86,7 +86,7 @@ const MENU = [
     ],
   },
   {
-    title: "Sobremesa",
+    category: "Sobremesa",
     data: [
       {
         id: "5",
@@ -115,7 +115,7 @@ const MENU = [
     ],
   },
   {
-    title: "Bebidas",
+    category: "Bebidas",
     data: [
       {
         id: "7",
@@ -133,7 +133,7 @@ const MENU = [
 
 const PRODUCTS = MENU.map((item) => item.data).flat()
 
-const CATEGORIES = MENU.map((item) => item.title)
+const CATEGORIES = MENU.map((item) => item.category)
 
 type ProductProps = (typeof PRODUCTS)[0]
 
