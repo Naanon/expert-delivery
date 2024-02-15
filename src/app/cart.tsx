@@ -1,11 +1,16 @@
-import { ScrollView, Text, View } from "react-native";
+import { Alert, ScrollView, Text, View } from "react-native";
+import { Feather } from "@expo/vector-icons";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
-import { useCartStore } from "@/stores/cart-store";
+import { ProductCartProps, useCartStore } from "@/stores/cart-store";
 
 import { formatCurrency } from "@/utils/functions/format-currency";
 
 import { Header } from "@/components/header";
 import { Product } from "@/components/product";
+import { Input } from "@/components/input";
+import { Button } from "@/components/button";
+import { LinkButton } from "@/components/link-button";
 
 export default function Cart() {
   const cartStore = useCartStore()
@@ -16,28 +21,61 @@ export default function Cart() {
     )
   )
 
+  function handleProductRemove(product: ProductCartProps) {
+    Alert.alert("Remover", `${product.title} será excluído do seu carrinho. Deseja prosseguir?`, [
+      {
+        text: "Cancelar"
+      },
+      {
+        text: "Remover",
+        onPress: () => cartStore.remove(product.id)
+      }
+    ])
+  }
+
   return (
     <View className="flex-1 pt-8">
       <Header title="Seu carrinho" />
 
-      <ScrollView>
-        {cartStore.products.length > 0 ? (
-
+      <KeyboardAwareScrollView>
+        <ScrollView>
           <View className="flex-1 p-5">
-            {cartStore.products.map((product) => (
-              <Product key={product.id} data={product} />
-            ))}
+            {cartStore.products.length > 0 ? (
+              <View className="border-b border-slate-700">
+                {cartStore.products.map((product) => (
+                  <Product
+                    key={product.id}
+                    data={product}
+                    onPress={() => handleProductRemove(product)}
+                  />
+                ))}
+              </View>
+            ) : (
+              <Text className="font-body text-slate-400 text-center mt-8">Seu carrinho está vazio.</Text>
+            )}
+
+
+            <View className="flex-row gap-2 items-center mt-5 mb-4">
+              <Text className="text-white text-xl font-subtitle">Total:</Text>
+
+              <Text className="text-lime-400 text-2xl font-heading">{total}</Text>
+            </View>
+
+            <Input placeholder="Informe o endereço de entrega completo para realizar a entrega." />
           </View>
-        ) : (
-          <Text className="font-body text-slate-400 text-center mt-8">Seu carrinho está vazio.</Text>
-        )}
+        </ScrollView>
+      </KeyboardAwareScrollView>
 
+      <View className="p-5 gap-5">
+        <Button>
+          <Button.Text>Enviar pedido</Button.Text>
+          <Button.Icon>
+            <Feather name="arrow-right-circle" size={20} />
+          </Button.Icon>
+        </Button>
 
-        <View className="flex-row gap-2 items-center mt-5 mb-4">
-          <Text className="text-white text-xl font-subtitle">Total:</Text>
-          <Text className="text-lime-400 text-2xl font-heading">{total}</Text>
-        </View>
-      </ScrollView>
+        <LinkButton title="Voltar ao cardápio" href="/" />
+      </View>
     </View>
   )
 }
