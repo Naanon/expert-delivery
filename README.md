@@ -14,7 +14,7 @@
     - [4.2. Access the project directory](#42-access-the-project-directory)
     - [4.3. Install the Dependencies](#43-install-the-dependencies)
   - [5. Execute the project](#5-execute-the-project)
-    - [5.1. Launch and scan QR Code](#51-launch-and-scan-qr-code)
+    - [5.1. Launch Application and scan QR Code](#51-launch-application-and-scan-qr-code)
   
 ## 1. Project Description
 Native mobile application developed with [React Native](https://reactnative.dev/) for both Android and iOS that resembles a food delivery, in which the user can view the menu, add the items of interest to the cart and finally forward the order to the restaurant via WhatsApp to place the order.
@@ -31,7 +31,7 @@ Native mobile application developed with [React Native](https://reactnative.dev/
 
 ## 3. Prerequisites
 ### 3.1. Node.js
-> Download and install [Node.js](https://nodejs.org/)
+> Download and Install [Node.js](https://nodejs.org/)
 
 ### 3.2. TypeScript
    ```sh
@@ -43,7 +43,7 @@ Native mobile application developed with [React Native](https://reactnative.dev/
    ```sh
    git clone https://github.com/Naanon/expert-delivery
    ```
-### 4.2. Access the project directory  
+### 4.2. Access the Project Directory  
    ```sh
    cd expert-delivery
    ```
@@ -52,8 +52,8 @@ Native mobile application developed with [React Native](https://reactnative.dev/
    npm install
    ```
 
-## 5. Execute the project
-### 5.1. Launch and Scan QR Code
+## 5. Execute the Project
+### 5.1. Launch Application and Scan QR Code
    ```sh
    npm start
    ```
