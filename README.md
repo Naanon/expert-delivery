@@ -1,4 +1,4 @@
-# Movies Lib
+# Expert Delivery
 <img height="50" alt="React" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"/> <img height="50" alt="TypeScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" /> <img height="50" alt="Tailwind CSS" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
 
   - [1. Project Description](#1-project-description)
@@ -8,6 +8,7 @@
     - [2.3. Cart](#23-cart)
   - [3. Prerequisites](#3-prerequisites)
     - [3.1. Node.js](#31-nodejs)
+    - [3.2. TypeScript](#32-typescript)
   - [4. Installation](#4-installation)
     - [4.1. Clone the Repository](#41-clone-the-repository)
     - [4.2. Access the project directory](#42-access-the-project-directory)
@@ -31,6 +32,11 @@ Native mobile application developed with [React Native](https://reactnative.dev/
 ## 3. Prerequisites
 ### 3.1. Node.js
 > Download and install [Node.js](https://nodejs.org/)
+
+### 3.2. TypeScript
+   ```sh
+   npm install -g typescript
+   ```
    
 ## 4. Installation
 ### 4.1. Clone the Repository
@@ -42,7 +48,6 @@ Native mobile application developed with [React Native](https://reactnative.dev/
    cd expert-delivery
    ```
 ### 4.3. Install the Dependencies
-   > Mobile Application Dependencies
    ```sh
    npm install
    ```
