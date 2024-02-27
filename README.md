@@ -23,7 +23,7 @@ Native mobile application developed with [React Native](https://reactnative.dev/
 ### 2.2 Item Information
 <img height="750" alt="Item Information" src="images/2.jpg"/>
 
-### 2.3 Movie Details
+### 2.3 Cart
 <img height="750" alt="Cart" src="images/3.jpg"/>
 
 ## 3. Prerequisites
